@@ -5,14 +5,25 @@ build-backend = "hatchling.build"
 [project]
 name = "robotics-control-mcp"
 version = "1.0.0"
-description = "MEOK AI Labs — robotics-control-mcp MCP Server"
+description = "MEOK AI Labs — IoT and robotics interface for AI agents. List connected devices, send commands"
+authors = [{name="MEOK AI Labs", email="nicholas@meok.ai"}]
 readme = "README.md"
-license = {file = "LICENSE"}
+license = {text = "MIT"}
 requires-python = ">=3.10"
-authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
-keywords = ["mcp", "ai", "meok", "model-context-protocol"]
-dependencies = ["mcp>=1.0.0"]
+keywords = ["mcp", "mcp-server", "model-context-protocol", "claude", "ai-tools", "meok-ai-labs", "robotics", "iot", "robot-control", "automation", "embedded-systems", "ros"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "mcp>=1.0.0",
+]
 
 [project.urls]
 Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/robotics-control-mcp"
+Documentation = "https://meok.ai/docs/robotics-control-mcp"
+"Bug Tracker" = "https://github.com/CSOAI-ORG/robotics-control-mcp/issues"

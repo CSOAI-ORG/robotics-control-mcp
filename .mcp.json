@@ -1,0 +1,25 @@
+{
+  "name": "robotics-control-mcp",
+  "description": "MEOK AI Labs \u2014 IoT and robotics interface for AI agents. List connected devices, send commands",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/robotics-control-mcp",
+  "runtime": "python",
+  "entrypoint": "server.py",
+  "tools": [
+    "list_devices",
+    "send_command",
+    "read_sensor",
+    "set_servo",
+    "run_gcode",
+    "emergency_stop"
+  ],
+  "categories": [
+    "Robotics",
+    "IoT"
+  ],
+  "pricing": {
+    "free": "50 calls/day",
+    "pro": "$9/mo"
+  }
+}
