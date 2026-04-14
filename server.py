@@ -13,6 +13,11 @@ Install: pip install mcp pyserial
 Run:     python server.py
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import json
 import os
 import re
@@ -405,12 +410,16 @@ mcp = FastMCP(
 
 
 @mcp.tool()
-def list_devices() -> dict:
+def list_devices(api_key: str = "") -> dict:
     """List all available devices. Auto-discovers serial ports (USB, Arduino,
     3D printers) and shows previously registered HTTP devices.
 
     Returns port names, descriptions, manufacturer info, and VID/PID for USB devices.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -422,7 +431,7 @@ def list_devices() -> dict:
 
 @mcp.tool()
 def send_command(device: str, command: str, connection_type: str = "auto",
-                 baudrate: int = 9600, timeout: float = 2.0) -> dict:
+                 baudrate: int = 9600, timeout: float = 2.0, api_key: str = "") -> dict:
     """Send a text command to a device and get its response.
 
     The device can be:
@@ -439,6 +448,10 @@ def send_command(device: str, command: str, connection_type: str = "auto",
         baudrate: Serial baud rate (default: 9600)
         timeout: Response timeout in seconds (default: 2.0)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -450,7 +463,7 @@ def send_command(device: str, command: str, connection_type: str = "auto",
 
 @mcp.tool()
 def read_sensor(device: str, sensor_id: str = "", connection_type: str = "auto",
-                baudrate: int = 9600) -> dict:
+                baudrate: int = 9600, api_key: str = "") -> dict:
     """Read a sensor value from a connected device. Sends a READ command
     and parses key=value pairs from the response.
 
@@ -460,6 +473,10 @@ def read_sensor(device: str, sensor_id: str = "", connection_type: str = "auto",
         connection_type: 'serial', 'http', or 'auto'
         baudrate: Serial baud rate (default: 9600)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -471,7 +488,7 @@ def read_sensor(device: str, sensor_id: str = "", connection_type: str = "auto",
 
 @mcp.tool()
 def set_servo(device: str, channel: int, angle: float, speed: int = 0,
-              connection_type: str = "auto", baudrate: int = 9600) -> dict:
+              connection_type: str = "auto", baudrate: int = 9600, api_key: str = "") -> dict:
     """Set a servo motor to a specific angle.
 
     Args:
@@ -482,6 +499,10 @@ def set_servo(device: str, channel: int, angle: float, speed: int = 0,
         connection_type: 'serial', 'http', or 'auto'
         baudrate: Serial baud rate (default: 9600)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -493,7 +514,7 @@ def set_servo(device: str, channel: int, angle: float, speed: int = 0,
 
 @mcp.tool()
 def run_gcode(device: str, gcode: str, connection_type: str = "auto",
-              baudrate: int = 115200) -> dict:
+              baudrate: int = 115200, api_key: str = "") -> dict:
     """Send G-code commands to a CNC machine, 3D printer, or robot arm.
     Multiple lines can be sent at once (newline-separated).
     Lines starting with ; are treated as comments and skipped.
@@ -506,6 +527,10 @@ def run_gcode(device: str, gcode: str, connection_type: str = "auto",
         connection_type: 'serial', 'http', or 'auto'
         baudrate: Serial baud rate (default: 115200 for most CNC/printers)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -516,7 +541,7 @@ def run_gcode(device: str, gcode: str, connection_type: str = "auto",
 
 
 @mcp.tool()
-def emergency_stop(device: str = "", release: bool = False) -> dict:
+def emergency_stop(device: str = "", release: bool = False, api_key: str = "") -> dict:
     """Activate or release emergency stop. When active, ALL commands to ALL
     devices are blocked at the software level.
 
@@ -527,6 +552,10 @@ def emergency_stop(device: str = "", release: bool = False) -> dict:
         device: Optional device to send hardware stop command to
         release: Set True to release the emergency stop and resume operations
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     # Emergency stop bypasses rate limiting
     try:
         return _emergency_stop(device, release)

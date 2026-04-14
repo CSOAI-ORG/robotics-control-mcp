@@ -1,7 +1,7 @@
 {
   "name": "robotics-control-mcp",
   "version": "1.0.0",
-  "description": "MEOK AI Labs — robotics control MCP Server",
+  "description": "MEOK AI Labs \u2014 robotics control MCP Server",
   "main": "server.py",
   "mcp": {
     "name": "robotics control",
@@ -9,10 +9,25 @@
     "homepage": "https://meok.ai",
     "repository": "https://github.com/CSOAI-ORG/robotics-control-mcp",
     "runtime": "python",
-    "tags": ["mcp", "mcp-server", "meok-ai-labs", "ai-tools"]
+    "tags": [
+      "mcp",
+      "mcp-server",
+      "meok-ai-labs",
+      "ai-tools"
+    ]
   },
-  "keywords": ["mcp", "mcp-server", "meok-ai-labs"],
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "meok-ai-labs"
+  ],
   "author": "MEOK AI Labs <nicholas@meok.ai>",
   "license": "MIT",
-  "repository": {"type": "git", "url": "https://github.com/CSOAI-ORG/robotics-control-mcp"}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/robotics-control-mcp"
+  },
+  "dependencies": {
+    "pyserial": "^1.0.0"
+  }
 }

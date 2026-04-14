@@ -1,25 +1,141 @@
 {
   "name": "robotics-control-mcp",
-  "description": "MEOK AI Labs \u2014 IoT and robotics interface for AI agents. List connected devices, send commands",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/robotics-control-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "version": "1.0.0",
   "tools": [
-    "list_devices",
-    "send_command",
-    "read_sensor",
-    "set_servo",
-    "run_gcode",
-    "emergency_stop"
-  ],
-  "categories": [
-    "Robotics",
-    "IoT"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "list_devices",
+      "description": "List all available devices. Auto-discovers serial ports (USB, Arduino,",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "send_command",
+      "description": "Send a text command to a device and get its response.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string"
+          },
+          "command": {
+            "type": "string"
+          },
+          "connection_type": {
+            "type": "string"
+          },
+          "baudrate": {
+            "type": "integer"
+          },
+          "timeout": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "device",
+          "command"
+        ]
+      }
+    },
+    {
+      "name": "read_sensor",
+      "description": "Read a sensor value from a connected device. Sends a READ command",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string"
+          },
+          "sensor_id": {
+            "type": "string"
+          },
+          "connection_type": {
+            "type": "string"
+          },
+          "baudrate": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "device"
+        ]
+      }
+    },
+    {
+      "name": "set_servo",
+      "description": "Set a servo motor to a specific angle.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "integer"
+          },
+          "angle": {
+            "type": "number"
+          },
+          "speed": {
+            "type": "integer"
+          },
+          "connection_type": {
+            "type": "string"
+          },
+          "baudrate": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "device",
+          "channel",
+          "angle"
+        ]
+      }
+    },
+    {
+      "name": "run_gcode",
+      "description": "Send G-code commands to a CNC machine, 3D printer, or robot arm.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string"
+          },
+          "gcode": {
+            "type": "string"
+          },
+          "connection_type": {
+            "type": "string"
+          },
+          "baudrate": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "device",
+          "gcode"
+        ]
+      }
+    },
+    {
+      "name": "emergency_stop",
+      "description": "Activate or release emergency stop. When active, ALL commands to ALL",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string"
+          },
+          "release": {
+            "type": "boolean"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
 }
