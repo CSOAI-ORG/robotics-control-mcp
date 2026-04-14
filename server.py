@@ -141,8 +141,7 @@ def _send_http(url: str, command: str, method: str = "POST") -> dict:
             req = urllib.request.Request(
                 url, data=payload,
                 headers={"Content-Type": "application/json"},
-                method="POST",
-            )
+                method="POST")
 
         with urllib.request.urlopen(req, timeout=5) as resp:
             body = resp.read().decode(errors="replace")
@@ -402,8 +401,7 @@ def _emergency_stop(device: str = "", release: bool = False) -> dict:
 # ---------------------------------------------------------------------------
 mcp = FastMCP(
     "Robotics Control MCP",
-    instructions="IoT and robotics interface: list devices, send serial/HTTP commands, read sensors, control servos, send G-code, and emergency stop. Part of MEOK AI Labs' HARVI project.",
-)
+    instructions="IoT and robotics interface: list devices, send serial/HTTP commands, read sensors, control servos, send G-code, and emergency stop. Part of MEOK AI Labs' HARVI project.")
 
 
 @mcp.tool()
