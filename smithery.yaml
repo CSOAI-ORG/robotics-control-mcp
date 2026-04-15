@@ -1,6 +1,6 @@
 name: robotics-control-mcp
-description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
-  \ everyone."
+description: 'IoT and robotics interface: list devices, send serial/HTTP commands,
+  read sensors, control servos, s'
 version: 1.0.0
 tools:
 - name: list_devices
