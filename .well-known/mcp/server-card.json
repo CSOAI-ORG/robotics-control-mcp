@@ -1,0 +1,62 @@
+{
+  "name": "Robotics Control MCP",
+  "description": "IoT and robotics interface: list devices, send serial/HTTP commands, read sensors, control servos, send G-code, and emergency stop. Part of MEOK AI Labs' HARVI project.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/robotics-control-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "list_devices",
+      "description": "List all available devices. Auto-discovers serial ports (USB, Arduino,"
+    },
+    {
+      "name": "send_command",
+      "description": "Send a text command to a device and get its response."
+    },
+    {
+      "name": "read_sensor",
+      "description": "Read a sensor value from a connected device. Sends a READ command"
+    },
+    {
+      "name": "set_servo",
+      "description": "Set a servo motor to a specific angle."
+    },
+    {
+      "name": "run_gcode",
+      "description": "Send G-code commands to a CNC machine, 3D printer, or robot arm."
+    },
+    {
+      "name": "emergency_stop",
+      "description": "Activate or release emergency stop. When active, ALL commands to ALL"
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Developer Tools",
+    "IoT & Hardware"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
