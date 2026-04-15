@@ -1,0 +1,10 @@
+{
+  "name": "robotics-control-mcp",
+  "description": "MEOK AI Labs \u2014 robotics-control-mcp",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/robotics-control-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "mcp-wrapper.py"
+}

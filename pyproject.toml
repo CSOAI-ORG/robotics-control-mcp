@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/robotics-control-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+robotics_control_mcp = "server:main"
