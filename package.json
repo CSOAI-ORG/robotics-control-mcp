@@ -1,7 +1,7 @@
 {
   "name": "robotics-control-mcp",
   "version": "1.0.0",
-  "description": "MEOK AI Labs \u2014 robotics control MCP Server",
+  "description": "Robotics Control MCP server. Tools: list devices, send command, read sensor. Built by MEOK AI Labs.",
   "main": "server.py",
   "mcp": {
     "name": "robotics control",

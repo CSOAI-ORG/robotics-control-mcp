@@ -1,6 +1,6 @@
 {
   "name": "robotics-control-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 IoT and robotics interface: list devices, send serial/HTTP commands, read sensors, control servos, s",
+  "description": "Robotics Control MCP server. Tools: list devices, send command, read sensor. Built by MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
