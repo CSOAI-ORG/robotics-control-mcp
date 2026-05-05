@@ -1,60 +1,38 @@
-# Robotics Control MCP Server
+<div align="center">
 
-> **By [MEOK AI Labs](https://meok.ai)** — Sovereign AI tools for everyone.
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/robotics-control-mcp)](https://github.com/CSOAI-ORG/robotics-control-mcp/stargazers)
 
-IoT and robotics interface for AI agents. Control hardware devices over serial ports and HTTP -- Arduino, Raspberry Pi, 3D printers, CNC machines, servo controllers, and custom robots.
+# uroboticsU controlU mcp
 
-[![MCPize](https://img.shields.io/badge/MCPize-Listed-blue)](https://mcpize.com/mcp/robotics-control)
-[![MIT License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+**IoT and robotics interface for AI agents. Control hardware devices over serial ports and HTTP -- Arduino, Raspberry Pi, 3D printers, CNC machines, servo controllers, and custom robots.**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/robotics-control-mcp)](https://www.npmjs.com/package/@meok-ai/robotics-control-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
 
-## Tools
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/robotics-control-mcp/issues)
 
-| Tool | Description |
-|------|-------------|
-| `list_devices` | List all available devices with auto-discovery |
-| `send_command` | Send a text command to a device and get its response |
-| `read_sensor` | Read a sensor value from a connected device |
-| `set_servo` | Set a servo motor to a specific angle |
-| `run_gcode` | Send G-code commands to CNC machines, 3D printers, or robot arms |
-| `emergency_stop` | Activate or release emergency stop on all devices |
+</div>
+
+---
+
+## Installation
+
+```bash
+pip install robotics-control-mcp
+# or
+npm install -g @meok-ai/robotics-control-mcp
+```
 
 ## Quick Start
 
-```bash
-pip install mcp
-git clone https://github.com/CSOAI-ORG/robotics-control-mcp.git
-cd robotics-control-mcp
-python server.py
-```
+See the project repository for full documentation and examples.
 
-## Claude Desktop Config
+## Enterprise Support
 
-```json
-{
-  "mcpServers": {
-    "robotics-control": {
-      "command": "python",
-      "args": ["server.py"],
-      "cwd": "/path/to/robotics-control-mcp"
-    }
-  }
-}
-```
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
-## Pricing
+## License
 
-| Plan | Price | Requests |
-|------|-------|----------|
-| Free | $0/mo | 50 calls/day, 50 G-code lines/call |
-| Pro | $12/mo | Unlimited + persistent connections + batch G-code |
-| Enterprise | Contact us | Custom + multi-device orchestration |
-
-[Get on MCPize](https://mcpize.com/mcp/robotics-control)
-
-## Part of MEOK AI Labs
-
-This is one of 255+ MCP servers by MEOK AI Labs. Browse all at [meok.ai](https://meok.ai) or [GitHub](https://github.com/CSOAI-ORG).
-
----
-**MEOK AI Labs** | [meok.ai](https://meok.ai) | nicholas@meok.ai | United Kingdom
+MIT © [CSOAI](https://csoai.org)
