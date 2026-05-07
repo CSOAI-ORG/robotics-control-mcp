@@ -1,3 +1,5 @@
+[![robotics-control-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/robotics-control-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/robotics-control-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/robotics-control-mcp)](https://github.com/CSOAI-ORG/robotics-control-mcp/stargazers)
