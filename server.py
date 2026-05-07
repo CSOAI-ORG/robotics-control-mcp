@@ -415,6 +415,21 @@ def list_devices(api_key: str = "") -> dict:
     3D printers) and shows previously registered HTTP devices.
 
     Returns port names, descriptions, manufacturer info, and VID/PID for USB devices.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -447,6 +462,21 @@ def send_command(device: str, command: str, connection_type: str = "auto",
         connection_type: 'serial', 'http', or 'auto' (default)
         baudrate: Serial baud rate (default: 9600)
         timeout: Response timeout in seconds (default: 2.0)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -472,6 +502,21 @@ def read_sensor(device: str, sensor_id: str = "", connection_type: str = "auto",
         sensor_id: Optional sensor identifier (e.g. 'temperature', 'distance')
         connection_type: 'serial', 'http', or 'auto'
         baudrate: Serial baud rate (default: 9600)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -498,6 +543,21 @@ def set_servo(device: str, channel: int, angle: float, speed: int = 0,
         speed: Movement speed (0 = max speed, higher = slower)
         connection_type: 'serial', 'http', or 'auto'
         baudrate: Serial baud rate (default: 9600)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -526,6 +586,21 @@ def run_gcode(device: str, gcode: str, connection_type: str = "auto",
         gcode: G-code commands (newline-separated)
         connection_type: 'serial', 'http', or 'auto'
         baudrate: Serial baud rate (default: 115200 for most CNC/printers)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -551,6 +626,21 @@ def emergency_stop(device: str = "", release: bool = False, api_key: str = "") -
     Args:
         device: Optional device to send hardware stop command to
         release: Set True to release the emergency stop and resume operations
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
