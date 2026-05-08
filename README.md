@@ -6,40 +6,53 @@
 
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/robotics-control-mcp)](https://github.com/CSOAI-ORG/robotics-control-mcp/stargazers)
+# Robotics Control MCP
 
-# uroboticsU controlU mcp
+**MCP server for robotics control mcp operations**
 
-**IoT and robotics interface for AI agents. Control hardware devices over serial ports and HTTP -- Arduino, Raspberry Pi, 3D printers, CNC machines, servo controllers, and custom robots.**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/robotics-control-mcp)](https://www.npmjs.com/package/@meok-ai/robotics-control-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-robotics-control-mcp)](https://pypi.org/project/meok-robotics-control-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/robotics-control-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Robotics Control MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `list_devices` | List all available devices. Auto-discovers serial ports (USB, Arduino, |
+| `send_command` | Send a text command to a device and get its response. |
+| `read_sensor` | Read a sensor value from a connected device. Sends a READ command |
+| `set_servo` | Set a servo motor to a specific angle. |
+| `run_gcode` | Send G-code commands to a CNC machine, 3D printer, or robot arm. |
+| `emergency_stop` | Activate or release emergency stop. When active, ALL commands to ALL |
 
 ## Installation
 
 ```bash
-pip install robotics-control-mcp
-# or
-npm install -g @meok-ai/robotics-control-mcp
+pip install meok-robotics-control-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config:
 
-## Enterprise Support
-
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+```json
+{
+  "mcpServers": {
+    "robotics-control-mcp": {
+      "command": "python",
+      "args": ["-m", "meok_robotics_control_mcp.server"]
+    }
+  }
+}
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
+MIT © [MEOK AI Labs](https://meok.ai)
 <!-- mcp-name: io.github.CSOAI-ORG/robotics-control-mcp -->
