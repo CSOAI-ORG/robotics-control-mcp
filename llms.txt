@@ -1,0 +1,39 @@
+# robotics-control-mcp
+# **MCP server for robotics control mcp operations**
+
+## Install
+```bash
+pip install robotics-control-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `list_devices`
+List all available devices. Auto-discovers serial ports (USB, Arduino,
+
+### `send_command`
+Send a text command to a device and get its response.
+
+### `read_sensor`
+Read a sensor value from a connected device. Sends a READ command
+
+### `set_servo`
+Set a servo motor to a specific angle.
+
+### `run_gcode`
+Send G-code commands to a CNC machine, 3D printer, or robot arm.
+
+### `emergency_stop`
+Activate or release emergency stop. When active, ALL commands to ALL
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

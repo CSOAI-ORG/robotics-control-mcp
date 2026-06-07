@@ -1,0 +1,9 @@
+# robotics-control-mcp - Auto-trigger Rules
+
+When the user asks about robotics control, use robotics-control-mcp tools: list_devices, send_command, read_sensor, set_servo, run_gcode
+
+**MCP server for robotics control mcp operations**
+
+Install: `pip install robotics-control-mcp`
+
+By MEOK AI Labs — MIT licensed.

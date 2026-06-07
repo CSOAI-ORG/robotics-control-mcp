@@ -1,0 +1,31 @@
+{
+  "name": "robotics-control-mcp",
+  "title": "Robotics Control Mcp",
+  "description": "Robotics Control MCP server. Tools: list devices, send command, read sensor. Built by MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "list_devices"
+    },
+    {
+      "name": "send_command"
+    },
+    {
+      "name": "read_sensor"
+    },
+    {
+      "name": "set_servo"
+    },
+    {
+      "name": "run_gcode"
+    },
+    {
+      "name": "emergency_stop"
+    }
+  ]
+}

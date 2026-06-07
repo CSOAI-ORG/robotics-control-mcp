@@ -15,7 +15,6 @@ Run:     python server.py
 
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import json
@@ -447,7 +446,7 @@ def list_devices(api_key: str = "") -> dict:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -508,7 +507,7 @@ def send_command(device: str, command: str, connection_type: str = "auto",
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -562,7 +561,7 @@ def read_sensor(device: str, sensor_id: str = "", connection_type: str = "auto",
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -617,7 +616,7 @@ def set_servo(device: str, channel: int, angle: float, speed: int = 0,
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -674,7 +673,7 @@ def run_gcode(device: str, gcode: str, connection_type: str = "auto",
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     err = _check_rate_limit()
     if err:
@@ -728,7 +727,7 @@ def emergency_stop(device: str = "", release: bool = False, api_key: str = "") -
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     # Emergency stop bypasses rate limiting
     try:
@@ -737,5 +736,8 @@ def emergency_stop(device: str = "", release: bool = False, api_key: str = "") -
         return {"error": str(e)}
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
