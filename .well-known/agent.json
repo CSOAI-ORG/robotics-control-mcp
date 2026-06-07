@@ -1,0 +1,77 @@
+{
+  "name": "robotics-control-mcp",
+  "description": "Robotics Control MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/robotics-control-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "list_devices",
+      "name": "List Devices",
+      "description": "list_devices via robotics-control-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "send_command",
+      "name": "Send Command",
+      "description": "send_command via robotics-control-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "read_sensor",
+      "name": "Read Sensor",
+      "description": "read_sensor via robotics-control-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "set_servo",
+      "name": "Set Servo",
+      "description": "set_servo via robotics-control-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "run_gcode",
+      "name": "Run Gcode",
+      "description": "run_gcode via robotics-control-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "emergency_stop",
+      "name": "Emergency Stop",
+      "description": "emergency_stop via robotics-control-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
