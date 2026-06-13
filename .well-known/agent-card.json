@@ -1,0 +1,128 @@
+{
+  "name": "Robotics Control Mcp",
+  "version": "1.0.6",
+  "url": "https://mcp.meok.ai/robotics-control-mcp/a2a",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "protocolVersion": "0.3.0",
+  "description": "Robotics Control MCP server. Tools: list devices, send command, read sensor. Built by MEOK AI Labs.",
+  "provider": {
+    "organization": "MEOK AI LABS",
+    "url": "https://meok.ai"
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "list_devices",
+      "name": "List Devices",
+      "description": "List Devices — a tool of the robotics-control-mcp MCP.",
+      "tags": [
+        "robotics"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "send_command",
+      "name": "Send Command",
+      "description": "Send Command — a tool of the robotics-control-mcp MCP.",
+      "tags": [
+        "robotics"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "read_sensor",
+      "name": "Read Sensor",
+      "description": "Read Sensor — a tool of the robotics-control-mcp MCP.",
+      "tags": [
+        "robotics"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "set_servo",
+      "name": "Set Servo",
+      "description": "Set Servo — a tool of the robotics-control-mcp MCP.",
+      "tags": [
+        "robotics"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "run_gcode",
+      "name": "Run Gcode",
+      "description": "Run Gcode — a tool of the robotics-control-mcp MCP.",
+      "tags": [
+        "robotics"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "emergency_stop",
+      "name": "Emergency Stop",
+      "description": "Emergency Stop — a tool of the robotics-control-mcp MCP.",
+      "tags": [
+        "robotics"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    }
+  ],
+  "documentationUrl": "https://meok.ai",
+  "x-meok": {
+    "mcp_name": "robotics-control-mcp",
+    "verifier": "https://proofof.ai/verify",
+    "governed_by": "CSOAI 52-article charter"
+  }
+}
