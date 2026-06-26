@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+Buy Pro: https://www.csoai.org/checkout
+
 Robotics Control MCP Server
 ==============================
 IoT and robotics interface for AI agents. List connected devices, send commands
